@@ -58,7 +58,7 @@ workspaces() {
 	name=1
 	for monitor in `bspc query -M`; do
 		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
-		bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' '' '' 'ﴼ' ''
+		bspc monitor ${monitor} -n "$name" -d '' ' ' ' ' ' ' ' ' ' ' ' ' 'ﴼ ' ' '
 		let name++
 	done
 }
@@ -116,17 +116,18 @@ for i in ${office[@]}; do
    bspc rule -a $i desktop='^5' follow=on focus=on; done
 
 ## 6 > communication (always open communication apps on workspace-6)
-declare -a comm=(Thunderbird TelegramDesktop Hexchat)
+declare -a comm=(Thunderbird TelegramDesktop Hexchat QQ)
 for i in ${comm[@]}; do
    bspc rule -a $i desktop='^6' follow=on focus=on; done
 bspc rule -a TelegramDesktop desktop='^6'  state=floating
+bspc rule -a QQ desktop='^6'  state=floating
 ## 7 > media (always open media apps on workspace-7)
-declare -a media=(Audacity Music Inkscape mpv yesplaymusic vlc spotify Gimp-2.10 obs)
+declare -a media=(Audacity Music Inkscape mpv yesplaymusic vlc spotify obs)
 for i in ${media[@]}; do
    bspc rule -a $i desktop='^7' state=floating follow=on focus=on; done
 
-## 8 > video editing(alweys open video editor on worksspace-8)
-declare -a editor=(kdenlive OpenToonz resolve Fusion Blender mystiq  Natron)
+## 8 > Graphic Design (alweys open video editor on worksspace-8)
+declare -a editor=(kdenlive OpenToonz resolve Fusion Blender mystiq Gimp-2.10 krita Natron)
 for i in ${editor[@]}; do
   bspc rule -a $i desktop='^8' state=tiled follow=on focus=on; done
 bspc rule -a Blender state=tiled
@@ -142,8 +143,8 @@ for i in ${settings[@]}; do
    bspc rule -a $i desktop='^9' state=floating follow=on focus=on; d focus=on sttate=tile;done
 
 ## Always Floating Apps
-declare -a floating=(fdm alacritty-float Pcmanfm Thunar kitty Onboard Yad 'Firefox:Places' \
-Viewnior marktext  feh Nm-connection-editor mystiq)
+declare -a floating=(fdm alacritty-float Pcmanfm Thunar qv2ray kitty Onboard Yad 'Firefox:Places' FusionRenderNode \
+Viewnior  persepolis marktext  feh Nm-connection-editor mystiq)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
@@ -183,11 +184,13 @@ feh --no-fehbg --bg-fill "$CURRENT_WALLPAPER"
 exec mpd &
 
 # fcitx5
+#
+INPUT_METHOD=fcitx
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
-GLFW_IM_MODULE=ibus
+GLFW_IM_MODULE=fcitx
 fcitx5 &
 
 # Start bspwm scripts

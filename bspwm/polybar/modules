@@ -12,20 +12,23 @@ sink = alsa_output.pci-0000_12_00.3.analog-stereo
 ; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
 ; Default: true
 use-ui-max = true
+format-background = #131c26
 
 ; IntGrval for volume increase/decrease (in percent points)
 ; Default: 5
 interval = 5
 
-format-volume = <ramp-volume> <label-volume>
+format-volume =  <ramp-volume> <label-volume>
+format-volume-background = ${color.ALTGREEN}
 
 format-muted = <label-muted>
+format-muted-background = ${color.ALTGREEN}
 format-muted-prefix = 婢
-format-muted-prefix-font = 2
+format-muted-prefix-font = 5
 format-muted-prefix-foreground = ${color.RED}
 
 label-volume = %percentage%%
-label-volume-foreground = #AEB7BF
+label-volume-foreground = #131C26
 label-muted = " Mute"
 label-muted-foreground = #757575
 
@@ -39,8 +42,8 @@ ramp-volume-6 = 墳
 ramp-volume-7 = 墳
 ramp-volume-8 = 墳
 ramp-volume-9 = 墳
-ramp-volume-font = 2
-ramp-volume-foreground = ${color.BLUE}
+ramp-volume-font = 5
+ramp-volume-foreground = #e05f65
 
 ramp-headphones-0 = 
 ramp-headphones-1 = 
@@ -181,6 +184,7 @@ ws-icon-default = 
 
 format = <label-state>
 format-font = 2
+format-background = ${color.ALTBLACK}
 
 label-monitor = %name%
 
@@ -197,19 +201,19 @@ label-monitor = %name%
 
 label-focused = %name%
 label-focused-foreground = ${color.BLUE}
-label-focused-background = ${color.BACKGROUND}
+;label-focused-background = ${color.BACKGROUND}
 label-focused-underline = ${color.BLUE}
 label-focused-padding = 1
 
 label-occupied = %name%
 label-occupied-foreground = ${color.GREEN}
-label-occupied-background = ${color.BACKGROUND}
+;label-occupied-background = ${color.BACKGROUND}
 ;label-occupied-underline = ${color.GREEN}
 label-occupied-padding = 1
 
 label-urgent = %name%
 label-urgent-foreground = ${color.RED}
-label-urgent-background = ${color.BACKGROUND}
+;label-urgent-background = ${color.BACKGROUND}
 label-urgent-underline = ${color.RED}
 label-urgent-padding = 1
 
@@ -253,7 +257,8 @@ time = %I:%M %p
 time-alt = %A, %d %B %Y
 
 format = <label>
-format-prefix = " "
+format-background = ${color.BLUE}
+format-prefix = "  "
 format-prefix-font = 2
 format-prefix-foreground = ${color.RED}
 
@@ -272,15 +277,15 @@ type = internal/mpd
 interval = 2
 
 format-online = <label-song> <icon-prev> <toggle> <icon-next>
+format-online-background = ${color.RED}
 format-online-prefix = " "
 format-online-prefix-foreground = ${color.GREEN}
 format-online-foreground = #f2f2f2
-format-online-underline = #204040
 format-playing = ${self.format-online}
 format-paused = <label-song> <toggle>
 
 format-offline = <label-offline>
-format-offline-underline = #204040
+format-offline-background = ${color.RED}
 format-offline-prefix = " "
 format-offline-prefix-foreground = ${color.RED}
 label-offline = "Offline"
@@ -291,18 +296,18 @@ label-song-ellipsis = true
 lable-song-font = 6
 
 icon-play = 
-icon-play-font = 2
+icon-play-font = 4
 icon-play-foreground = ${color.GREEN}
 icon-pause = 
-icon-pause-font = 2
+icon-pause-font = 4
 icon-pause-foreground = ${color.YELLOW}
 icon-stop = 
 icon-stop-foreground = ${color.RED}
 icon-prev = 玲
-icon-prev-font = 2
+icon-prev-font = 4
 icon-prev-foreground = ${color.CYAN}
 icon-next = 怜
-icon-next-font = 2
+icon-next-font = 4
 icon-next-foreground = ${color.CYAN}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -317,11 +322,13 @@ accumulate-stats = true
 unknown-as-up = true
 
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-background = ${color.WHITE}
+format-connected-prefix = "  "
 format-connected-prefix-font = 3
 format-connected-prefix-foreground = #038C7F
 
 format-disconnected = <label-disconnected>
+format-disconnected-background = ${color.WHITE}
 format-disconnected-prefix = " "
 format-disconnected-prefix-font = 3
 format-disconnected-prefix-foreground = ${color.RED}
@@ -333,7 +340,6 @@ label-disconnected = "%{A1:networkmanager_dmenu &:}Offline%{A}"
 
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 [module/network]
 type = internal/network
 interface = ${system.sys_network_interface}
@@ -365,15 +371,6 @@ ramp-signal-font = 3
 ramp-signal-foreground = ${color.CYAN}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/sep]
-type = custom/text
-content = ◆ 
-
-content-foreground = ${color.BLACK}
-content-padding = 1
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 [module/cava]
 type = custom/script
 tail = true
@@ -381,7 +378,8 @@ exec = $HOME/.config/polybar/scripts/cava.sh
 format = <label>
 format-font = 5
 label = %output%
-label-foreground = #7F8C6C
+label-foreground = ${color.BLUE}
+label-background = ${color.RED}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 [module/polynotifications]
@@ -398,8 +396,9 @@ type = internal/cpu
 interval = 0.5c)c
 warn-percentage = 95
 format = <label>
-format-prefix = " "
-format-prefix-foreground = #658F8D
+format-prefix = "  "
+format-prefix-foreground = ${color.CYAN}
+format-background = ${color.ALTBLACK}
 label = %percentage%%
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -422,33 +421,30 @@ label-mounted = %mountpoint%:%free%
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-pacman-aurhelper.sh
 interval = 600
-format-prefix = " "
+format-foreground = #0F6466
+format-prefix = "  "
 format-prefix-foreground = #0F6466
+format-background = ${color.ALTYELLOW}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 [module/info-hackspeed]
 type = custom/script
 exec = ~/.config/polybar/scripts/info-hackspeed.sh
 format-prefix = ""
+format-background = ${color.ALTMAGENTA}
 tail = true
 
 
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-[module/kdeconnect]  
-type = custom/script  
-exec = "~/.config/polybar/scripts/polybar-kdeconnect.sh/polybar-kdeconnect.sh -d"  
-tail = true
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 [module/title]
 type = internal/xwindow
-format = <label>
-format-background = #BEBDBF
-format-foreground = #0E1426
-format-padding = 3
-label = %title%
-label-maxlen = 10
-label-empty = Archlinux is the besk
+label = %title:0:78:%
+lable-padding-left =  1
+label-padding-right = 0
+lable-empty-padding-left =1
+label-empty-padding-right =0
+label-empty = Arch Gun/linux Operating System
 label-empty-foreground = #D9D9D9
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -461,26 +457,33 @@ interval = 60
 label-font = 5
 label-foreground = #94A189
 
+[module/sep]
+type = custom/text
+content = " | "
+content-padding = 0
+content-foreground = ${color.BACKGROUND}
+content-background = ${color.RED}
 
 [module/polyweather]
 type = custom/script
 exec = ~/.config/polybar/scripts/weather-plugin.sh
 tail = false
 interval = 960
+format-background = ${color.BLACK}
 
 [module/memory]
 type = internal/memory
 interval = 3
 warn-percentage = 80
 format = <label> <rump-used>
-format-underline = #593954
-format-prefix = " "
+format-background = ${color.ALTRED}
+format-prefix = "  "
 format-prefix-font = 2
 format-prefix-foreground = #038C8C
 label = %gb_used%
-label-foreground = #889C9B
+label-foreground = #131C26
 label-warn = %gb_used%/%gb_free%
-label-warn-foreground = #889C9B
+label-warn-foreground = #131C26
 
 rump-used-indicator =
 rump-used-width = 10

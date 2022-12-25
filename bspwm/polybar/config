@@ -1,5 +1,4 @@
-## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com>
-## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+## Copyright (C) 2020-2022 Aditya Shakya <adi1090x@gmail.com> # Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -12,9 +11,7 @@ margin-top = 0
 include-file = ~/.config/bspwm/polybar/system
 include-file = ~/.config/bspwm/polybar/colors
 include-file = ~/.config/bspwm/polybar/modules
-; powerline polybar
-include-file = ~/.config/bspwm/polybar/powerline-for-polybar/powerline-for-polybar.config
-include-file = ~/.config/bspwm/polybar/powerline-for-polybar/samples/sample-colors.config
+include-file = ~/.config/bspwm/polybar/glyphs.ini
 
 [bar/main]
 monitor =
@@ -44,20 +41,20 @@ border-color = ${color.BACKGROUND}
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "JetBrainsMono Nerd Font:size=9;3"
-font-1 = "JetBrainsMono Nerd Font:size=9;3"
+font-0 = "JetBrainsMono Nerd Font:Bold:size=9;3"
+font-1 = "JetBrainsMono Nerd Font:Bold:size=9;3"
 font-2 = "google\-mdi:size=9;3"
-font-3 = "Iosevka:style=bold:size=9;3"
+font-3 = "Iosevka:style=bold:size=15;5"
 font-4 = "Weather Icons:size=9;3"
 font-5 = "Sarasa Mono SC Nerd:size=9;3"
 font-6 = "Material Icons:style=Bold:size=9;3"
 font-8 = "Inconsolata for Powerline:pixelsize=10:antialias=true;3"
+font-9 = "JetBrainsMono Nerd Font:Bold:size=22;5"
 
 
-
-modules-left = mod sep bspwm sep kdeconnect sep info-hackspeed sep updates-pacman-aurhelper
-modules-center = mpd sep cava sep title sep polyweather
-modules-right = volume sep memory sep cpu sep ethernet sep date sep polynitications
+modules-left = mod left1 bspwm left2 mpd sep cava left3
+modules-center = title right9 polyweather left4
+modules-right =right1 volume right2 info-hackspeed right3 updates-pacman-aurhelper right4 memory right5 cpu right6 ethernet right7 date right8 polynitications
 
 separator =
 spacing = 1
@@ -71,7 +68,7 @@ tray-position = right
 tray-detached = false
 tray-maxsize = 16
 tray-transparent = true
-tray-background = ${color.BACKGROUND}
+tray-background = ${color.MAGENTA}
 tray-offset-y = 0
 tray-padding = 0
 tray-scale = 1.0

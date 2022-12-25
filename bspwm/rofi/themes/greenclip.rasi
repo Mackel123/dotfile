@@ -1,0 +1,121 @@
+/*******************************************************************************
+ * ROFI VERTICAL THEME USING THE NORD COLOR PALETTE 
+ * User                 : LR-Tech               
+ * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
+ * Nord Project Repo    : https://github.com/arcticicestudio/nord
+ *******************************************************************************/
+configuration {
+    lacation:  0;
+    fixed-num-lines: true;
+    show-icons:  false;
+    scroll-method: 1;
+    sidebar-mode:  true;
+    display-clipboard: "  ";
+  }
+
+* {
+    --dark1  :  #2e3440;
+    --dark2  :  #3b4252;
+    --dark3  :  #434c5e;
+    --dark4  :  #4c566a;
+   --light1  :  #d8dee9;
+   --light2  :  #e5e9f0;
+   --light3  :  #eceff4;
+    --blue1  :  #8fbcbb;
+    --blue2  :  #88c0d0;
+    --blue3  :  #81a1c1;
+    --blue4  :  #5e81ac;
+      --red  :  #bf616a;
+   --orange  :  #d08770;
+   --yellow  :  #ebcb8b;
+    --green  :  #a3be8c;
+   --purple  :  #b48ead;
+
+    
+    text-color:            @light2;
+    border-color:          @dark4;
+    background-color :     @dark4;
+    font:                  "Iosevka 10";
+}
+
+
+window {
+  location:  center;
+  anchor:    center;
+    spacing:    3px;
+    width:      40%;
+    padding:    4px;
+    children:   [ mainbox ];
+    height : 0px;
+    vertical-align: 0.5;
+    background-color:   #4c566a;
+}
+
+mainbox {
+    spacing: 0;
+    num-rows:   true;
+    children: [inputbar,message, listview];
+  }
+
+message {
+    color: #bf616a;
+    padding: 5;
+    border-color: #2e3440;
+    border:  0px 2px 2px 2px;
+    background-color: #2e3440;
+}
+
+inputbar{
+    color: #2e3440;
+    background-color:  #3b4252;
+  }
+
+prompt {
+    margin: 6px 10px 6px 10px ;
+    spacing:  0;
+    border:   0;
+    background-color: #3b4252;
+  }
+
+entry {
+    spacing : 0;
+    horizontal-align:  0;
+    text-color:   #2e3440;
+    background-color: #ebcb8b;
+    expand  : true;
+    placeholder :  "Type  here";
+    padding: 6px  4px 6px 5px;
+  }
+
+case-indicator{
+    background-color: inherit;
+    text-color:       inherit;
+  }
+
+listview {
+    color:  #2e3440;
+    layout:     vertical;
+    spacing:    5px;
+    lines:      10;
+    background-color:  #4c566a;
+    scrrollbar: false;
+    padding:  4px 2px 2px;
+}
+
+element {
+    vertical-align: 0.5;
+    border-color: #4c566a;
+    background-color:  #4c566a;
+    color:  #4c566a;
+    text-color: #d8dee9;
+    padding:   5px;
+}
+element selected.normal {
+    background-color: #e5e9f0;
+    text-color:       #5e81ac;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}

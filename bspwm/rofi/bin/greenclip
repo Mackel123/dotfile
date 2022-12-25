@@ -1,0 +1,11 @@
+#!/usr/bin/env  bash
+
+DIR="$HOME/.config/bspwm"
+
+rofi \
+      -show clipboard  \
+      -modi "clipboard:greenclip print" \
+      -run-command '{cmd}' \
+      -theme "$DIR"/rofi/themes/greenclip.rasi
+
+
