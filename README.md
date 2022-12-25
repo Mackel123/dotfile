@@ -1,5 +1,20 @@
 # dotfiles
 
+## 更新
+
+重新修改了一下nvim配置和polybar文件，增加了rofi-geenclip剪切板，很完美。
+
+*nvim截圖*
+![](https://s2.loli.net/2022/12/25/UDQJvsELPm9rwNF.png)
+
+*polybar*
+![Screenshot_2022-12-25-14-38-04_2560x1440.png](https://s2.loli.net/2022/12/25/vUnNq9fFo27lKMw.png)
+
+**全屏截圖**
+![Screenshot_2022-12-25-14-49-24_2560x1440.png](https://s2.loli.net/2022/12/25/uwEpRYjlDLKScUF.png)
+
+---
+
 这是我个人在使用的配置文件，基于archcraft发行版的bspwm tiing winwows manager,稍微修改了一些配置的桌面颜色，使用的文件是 **[decaycs](https://github.com/decaycs/decaycs)** ，颜色位于`bspwm\theme\current.bash`
 文件中，如果需要修改或者需要不需要theme文件下，自行修改即可。
 
